@@ -1,12 +1,11 @@
-import { useState } from "react";
-import BaseLayout from "./components/BaseLayout";
+import { StrictMode } from "react";
+import { RouterProvider } from "@tanstack/react-router";
+import router from "./routes";
 
 export default function App() {
-  const [count, setCount] = useState(0);
-
   return (
-    <>
-      <BaseLayout />
-    </>
+    <StrictMode>
+      <RouterProvider router={router} />
+    </StrictMode>
   );
 }
