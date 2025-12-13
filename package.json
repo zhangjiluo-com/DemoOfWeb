@@ -20,6 +20,8 @@
   },
   "packageManager": "pnpm@10.25.0",
   "dependencies": {
+    "@tanstack/react-query": "^5.90.12",
+    "@tanstack/react-query-devtools": "^5.91.1",
     "@tanstack/react-router": "^1.141.1",
     "@tanstack/react-router-devtools": "^1.141.1",
     "antd": "^6.1.0",
