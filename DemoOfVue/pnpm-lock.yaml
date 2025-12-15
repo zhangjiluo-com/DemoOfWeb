@@ -9,26 +9,26 @@ importers:
   .:
     dependencies:
       pinia:
-        specifier: ^3.0.4
+        specifier: 3.0.4
         version: 3.0.4(typescript@5.9.3)(vue@3.5.25(typescript@5.9.3))
       tdesign-vue-next:
-        specifier: ^1.17.6
+        specifier: 1.17.6
         version: 1.17.6(vue@3.5.25(typescript@5.9.3))
       vue:
-        specifier: ^3.5.24
+        specifier: 3.5.25
         version: 3.5.25(typescript@5.9.3)
       vue-router:
-        specifier: ^4.6.4
+        specifier: 4.6.4
         version: 4.6.4(vue@3.5.25(typescript@5.9.3))
       zod:
-        specifier: ^4.1.13
+        specifier: 4.1.13
         version: 4.1.13
     devDependencies:
       '@tailwindcss/vite':
-        specifier: ^4.1.17
+        specifier: 4.1.18
         version: 4.1.18(vite@7.2.7(@types/node@24.10.1)(jiti@2.6.1)(lightningcss@1.30.2))
       '@tdesign-vue-next/auto-import-resolver':
-        specifier: ^0.1.4
+        specifier: 0.1.4
         version: 0.1.4(@babel/parser@7.28.5)(vue@3.5.25(typescript@5.9.3))
       '@types/node':
         specifier: 24.10.1
@@ -37,28 +37,28 @@ importers:
         specifier: 6.0.1
         version: 6.0.1(vite@7.2.7(@types/node@24.10.1)(jiti@2.6.1)(lightningcss@1.30.2))(vue@3.5.25(typescript@5.9.3))
       '@vitejs/plugin-vue-jsx':
-        specifier: ^5.1.2
+        specifier: 5.1.2
         version: 5.1.2(vite@7.2.7(@types/node@24.10.1)(jiti@2.6.1)(lightningcss@1.30.2))(vue@3.5.25(typescript@5.9.3))
       '@vue/tsconfig':
         specifier: 0.8.1
         version: 0.8.1(typescript@5.9.3)(vue@3.5.25(typescript@5.9.3))
       tailwindcss:
-        specifier: ^4.1.17
+        specifier: 4.1.18
         version: 4.1.18
       typescript:
         specifier: 5.9.3
         version: 5.9.3
       unplugin-auto-import:
-        specifier: ^20.3.0
+        specifier: 20.3.0
         version: 20.3.0
       unplugin-vue-components:
-        specifier: ^30.0.0
+        specifier: 30.0.0
         version: 30.0.0(@babel/parser@7.28.5)(vue@3.5.25(typescript@5.9.3))
       vite:
-        specifier: ^7.2.7
+        specifier: 7.2.7
         version: 7.2.7(@types/node@24.10.1)(jiti@2.6.1)(lightningcss@1.30.2)
       vite-plugin-vue-devtools:
-        specifier: ^8.0.5
+        specifier: 8.0.5
         version: 8.0.5(vite@7.2.7(@types/node@24.10.1)(jiti@2.6.1)(lightningcss@1.30.2))(vue@3.5.25(typescript@5.9.3))
       vue-tsc:
         specifier: 3.1.4
