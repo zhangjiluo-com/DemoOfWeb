@@ -1,0 +1,20 @@
+{
+  "name": "@zhangjiluo.com/demo-of-spider",
+  "version": "1.0.0",
+  "scripts": {
+    "start": "node ./index.mjs"
+  },
+  "author": {
+    "name": "zhangjiluo.com",
+    "email": "603495474@qq.com",
+    "url": "https://www.zhangjiluo.com"
+  },
+  "main": "index.mjs",
+  "type": "module",
+  "module": "index.mjs",
+  "description": "爬虫示例",
+  "dependencies": {
+    "express": "4.19.2",
+    "puppeteer": "22.10.0"
+  }
+}
