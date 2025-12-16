@@ -1,0 +1,13 @@
+{
+  "name": "@app-admin/login",
+  "private": true,
+  "version": "0.1.0",
+  "scripts": {
+    "dev": "vite",
+    "build": "vue-tsc && vite build",
+    "preview": "vite preview"
+  },
+  "files": [
+    "dist"
+  ]
+}
