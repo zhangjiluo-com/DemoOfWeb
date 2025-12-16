@@ -1,0 +1,46 @@
+{
+  "debug": false,
+  "pages": [
+    "pages/home/index",
+    "pages/customer-data/index",
+    "pages/user-center/index",
+    "pages/feedback/index",
+    "pages/setting/index",
+    "pages/about/index",
+    "pages/user-information/index",
+    "pages/customer-data-viewer/index",
+    "pages/product/index",
+    "pages/products/index"
+  ],
+  "tabBar": {
+    "custom": false,
+    "borderStyle": "white",
+    "color": "#aaaaaa",
+    "selectedColor": "#00a6ac",
+    "list": [
+      {
+        "pagePath": "pages/home/index",
+        "text": "首页",
+        "iconPath": "./images/home.png",
+        "selectedIconPath": "./images/home-1.png"
+      },
+      {
+        "pagePath": "pages/user-center/index",
+        "text": "个人中心",
+        "iconPath": "./images/user.png",
+        "selectedIconPath": "./images/user-1.png"
+      }
+    ]
+  },
+  "window": {
+    "navigationStyle": "default",
+    "backgroundColor": "#F6F6F6",
+    "navigationBarBackgroundColor": "#00a6ac"
+  },
+  "sitemapLocation": "sitemap.json",
+  "usingComponents": {
+    "page-wraper": "./components/page-wraper/index",
+    "form-item": "./components/form-item/index",
+    "action-list": "./components/action-list/index"
+  }
+}

@@ -1,0 +1,10 @@
+
+<view class="list list-class">
+  <navigator class="item item-class" wx:for="{{list}}" wx:key="{{index}}" url="{{item.url}}">
+    <image class="item__icon" src="{{item.icon}}" />
+    <text class="item__title">{{item.title}}</text>
+    <text class="item__text">{{item.text}}</text>
+    <image class="item__arrow" src="../../images/arrow.png" />
+    <view class="item__line" wx:if="{{index < (list.length - 1)}}"/>
+  </navigator>
+</view>

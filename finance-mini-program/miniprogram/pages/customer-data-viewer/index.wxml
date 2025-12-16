@@ -1,0 +1,33 @@
+<page-wraper loginCbs="{{loginCbs}}">
+
+  <view class="customer-data-viewer">
+    <view class="header">
+      <image class="avatar" src="{{data.avatarUrl}}"/>
+      <view class="header-info">
+        <view class="customer-name">
+          <image class="gender" wx:if="{{data.gender === 0 || data.gender === 1}}" src="../../images/{{data.gender === 1 ? '' : 'fe'}}male.png" />
+          {{data.name}}
+        </view>
+        <view>年龄： {{data.age}}</view>
+        <view>电话： <text class="phone" catchtap="call" data-phone="{{data.phone}}">{{data.phone}}</text></view>
+        <view>资金需求： {{data.demandMoney > 10000 ? data.demandMoney / 10000 + '万' : data.demandMoney || ''}}</view>
+      </view>
+    </view>
+
+    <form-item
+      wx:for="{{formConfig}}"
+      wx:key="{{item.key}}"
+      name="{{item.key}}"
+      value="{{data[item.key]}}"
+      config="{{item.config}}"
+      catchinput="input"
+      data-key="{{item.key}}"
+      label-class="form-item-label-class"
+      value-class="form-item-value-class"
+    />
+    
+  </view>
+
+  <button class="block-button" catchtap="onTapButton">编辑</button>
+  
+</page-wraper>

@@ -1,0 +1,16 @@
+.form-item {
+  display: flex;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0 15px;
+}
+.label {
+  font-size: 16px;
+  min-height: 20px;
+  line-height: 20px;
+  padding: 13px 0.5em 11px 0;
+}
+.control {
+  flex: 1;
+  overflow: hidden;
+}

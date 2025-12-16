@@ -1,0 +1,77 @@
+page {
+  padding-bottom: 70px;
+}
+.customer-data-viewer {
+  font-size: 16px;
+  background: #fff;
+  padding: 0 0 15px;
+  margin-top: 10px;
+}
+.header {
+  display: flex;
+  box-sizing: border-box;
+  padding: 15px;
+}
+.avatar {
+  width: 120px;
+  height: 120px;
+  background: #eee;
+  margin-right: 10px;
+}
+.header-info {
+  flex: 1;
+  line-height: 20px;
+  line-height: 1.8;
+}
+.phone {
+  color: #00bfff;
+  text-decoration: underline;
+}
+.gender {
+  width: 20px;
+  height: 20px;
+  margin-right: 10px;
+}
+.customer-name {
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+}
+.customer-info {
+  box-sizing: border-box;
+  padding: 15px;
+  line-height: 2;
+}
+.customer-information {
+  display: flex;
+  box-sizing: border-box;
+  padding: 0 15px;
+}
+.customer-information__title {
+  min-height: 20px;
+  line-height: 20px;
+  padding: 4px 0.5em 4px 0;
+}
+.customer-information__value {
+  flex: 1;
+  min-height: 20px;
+  line-height: 20px;
+  padding: 4px 0;
+  overflow: hidden;
+}
+.form-item-label-class {
+  padding: 4px 0.5em 4px 0 !important;
+}
+.form-item-value-class {
+  display: block;
+  padding: 4px 0 !important;
+  line-height: 20px;
+}
+.block-button {
+  position: fixed;
+  z-index: 100;
+  left: 15px;
+  margin-bottom: 15px;
+  bottom: 0;
+  bottom: env(safe-area-inset-bottom, 0);
+}

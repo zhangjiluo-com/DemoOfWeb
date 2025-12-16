@@ -1,0 +1,1 @@
+<action-list list-class="action-list" list="{{actions}}"/>

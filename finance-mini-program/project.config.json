@@ -1,0 +1,54 @@
+{
+	"miniprogramRoot": "miniprogram/",
+	"cloudfunctionRoot": "cloudfunctions/",
+	"setting": {
+		"urlCheck": true,
+		"es6": true,
+		"postcss": true,
+		"minified": true,
+		"newFeature": true
+	},
+	"appid": "wx8049dfd64a3a43a2",
+	"projectname": "finance-mini-program",
+	"libVersion": "2.6.6",
+	"simulatorType": "wechat",
+	"simulatorPluginLibVersion": {},
+	"cloudfunctionTemplateRoot": "cloudfunctionTemplate",
+	"compileType": "miniprogram",
+	"condition": {
+		"search": {
+			"current": -1,
+			"list": []
+		},
+		"conversation": {
+			"current": -1,
+			"list": []
+		},
+		"plugin": {
+			"current": -1,
+			"list": []
+		},
+		"game": {
+			"list": []
+		},
+		"miniprogram": {
+			"current": 0,
+			"list": [
+				{
+					"id": 0,
+					"name": "development",
+					"pathName": "pages/product/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "db guide",
+					"pathName": "pages/customer-data/index",
+					"query": "id=ee3099285cd6c5d9101fb7123a7e64f7&shareBy=12312313",
+					"scene": null
+				}
+			]
+		}
+	}
+}

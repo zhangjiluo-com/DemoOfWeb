@@ -1,0 +1,24 @@
+.wrap {
+  padding: 20px 15px;
+  box-sizing: border-box;
+  margin: auto;
+  margin-top: 20px;
+  background: #fff;
+}
+.title {
+  font-size: 18px;
+}
+.feedback,
+.contact {
+  display: block;
+  width: 325px;
+  font-size: 16px;
+  background: #f6f6f6;
+  margin-top: 10px;
+  line-height: 1.5;
+  padding: 10px;
+}
+
+.button {
+  margin: 20px auto;
+}

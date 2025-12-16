@@ -1,0 +1,6 @@
+<text class="value-class" wx:if="{{extra.isView}}">{{range[value] || ''}}</text>
+<picker class="form-control-selector" bindchange="input" value="{{value}}" range="{{range}}" wx:else>
+  <view class="form-control form-control-selector__view {{!value && 'form-control-selector__view_empty'}}">
+    {{(!value ? (placeholder || '请选择') : range[value])}}
+  </view>
+</picker>

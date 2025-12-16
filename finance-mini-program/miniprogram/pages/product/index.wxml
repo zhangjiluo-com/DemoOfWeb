@@ -1,0 +1,42 @@
+
+<page-wraper loginCbs="{{loginCbs}}">
+
+  <view class="product-detail">
+    <view class="background"></view>
+    <view class="header">
+      <view class="header-detail">
+        <view class="name">综合贷款</view>
+        <view class="brife">综合贷款简介</view>
+        view.
+      </view>
+      <view class="cover"></view>
+    </view>
+    <view class="section info">
+      <view class="info-item">
+        <view class="info-item__label">金融类型</view>
+        <view class="info-item__value">贷款产品</view>
+      </view>
+      <view class="info-item">
+        <view class="info-item__label">最高额度</view>
+        <view class="info-item__value">10万</view>
+      </view>
+      <view class="info-item">
+        <view class="info-item__label">最低额度</view>
+        <view class="info-item__value">2万</view>
+      </view>
+    </view>
+    <view class="section">
+      <view class="description__content">一些图文描述信息</view> 
+      <view class="description__content">
+        <image class="description__image" />
+      </view>
+    </view>
+    <view class="actions">
+      <view class="action">编辑</view>
+      <view class="action">删除</view>
+      <view class="action">发布</view>
+      <view class="action">申请</view>
+    </view>
+  </view>
+
+</page-wraper>

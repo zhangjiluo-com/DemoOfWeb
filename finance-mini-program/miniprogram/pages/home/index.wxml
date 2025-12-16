@@ -1,0 +1,40 @@
+<page-wraper loginCbs="{{loginCbs}}">
+  <view class="section-1">
+    <view class="add-customer-button" hover-class="navigator-hover" catchtap="onTapCustomerData">添加客户资料</view>
+  </view>
+  
+  <view class="section-2 customer-list" wx:if="{{customerDataList.length > 0}}">
+    <view
+      class="customer"
+      wx:for="{{customerDataList}}"
+      wx:key="{{item.id}}"
+      catchtap="onTapCustomerData"
+      catchlongpress="onPressCustomerData"
+      data-id="{{item._id}}"
+    >
+      <view class="customer__row customer__row_headline">
+        <image class="customer__icon" wx:if="{{item.gender === 0 || item.gender === 1}}" src="../../images/{{item.gender === 1 ? '' : 'fe'}}male.png" />
+        <view class="customer__title">{{item.name}}</view>
+        <view class="customer__text customer__text_right">{{item.demandMoney > 10000 ? item.demandMoney / 10000 + '万' : item.demandMoney || ''}}</view>
+      </view>
+      <view class="customer__row"><block wx:for="{{item.address.selector}}" wx:key="index">{{item}}</block>{{item.address.detail}}</view>
+      <view class="customer__row">
+        <view class="customer__text"></view>
+        <view class="customer__text customer__text_right">{{item.createAt}}</view>
+      </view>
+      <view>
+        <view class="customer__tag-item" wx:for="{{item.tags}}" wx:key="{{tag}}" wx:for-item="tag">{{tag}}</view>
+      </view>
+    </view>
+  </view>
+
+  <view class="nothing" wx:elif="{{store.ifLoggedIn}}">
+    <image class="nothing-icon" src="../../images/empty.png"/>
+    <view class="nothing-tip">没有东西哟，要加油咯!</view>
+  </view>
+
+  <button class="block-button login-button" wx:elif="{{store.ifCloudReady}}" open-type="getUserInfo" bindgetuserinfo="onTapGetUserInfo">
+    快捷登录体验完整功能
+  </button>
+  <!-- <view class="home-loading" wx:elif="{{!store.ifCloudReady}}">加载中。。。</view> -->
+</page-wraper>

@@ -1,0 +1,27 @@
+<form catchsubmit="onSubmit">
+  <view class="wrap">
+    <view class="title">请填写您的宝贵建议或反馈：</view>
+    <textarea
+      class="feedback"
+      placeholder="非常感谢您的支持"
+      data-code="feedback"
+      name="feedback"
+      auto-focus
+    />
+  </view>
+
+  <view class="wrap">
+    <view class="title">请提供您的联系方式：</view>
+    <input
+      class="contact"
+      data-code="contact"
+      name="contact"
+      placeholder="手机号、QQ号、微信号或者邮箱地址"
+    />
+ </view>
+
+  <button
+    class="block-button button"
+    form-type="submit"
+  >提交</button>
+</form>

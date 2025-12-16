@@ -1,0 +1,13 @@
+<text class="value-class" wx:if="{{extra.isView}}">{{value}}</text>
+<view class="form-control-text" wx:else>
+  <input
+    class="form-control-text__input"
+    type="{{extra.type}}"
+    bindinput="input"
+    value="{{value}}"
+    maxlength="{{extra.maxLength || 80}}"
+    placeholder="{{extra.placeholder}}"
+    disabled="{{extra.disabled}}"
+    auto-focus="{{extra.autoFocus}}"
+  />
+</view>

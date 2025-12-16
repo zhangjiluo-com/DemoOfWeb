@@ -1,0 +1,16 @@
+.form-control-selector {
+  display: block;
+}
+.form-control-selector__view {
+  font-size: 16px;
+  min-height: 20px;
+  line-height: 20px;
+  padding: 13px 0 10.5px;
+  border-bottom: 0.5px solid #ccc;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.form-control-selector__view_empty {
+  color: #808080;
+}

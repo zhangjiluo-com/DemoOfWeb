@@ -1,0 +1,31 @@
+<page-wraper loginCbs="{{loginCbs}}">
+  <view class="header">
+    <view class="header__left">
+      <view class="header__avatar" catchtap="onTapAvatar">
+        <image class="header__avatar-image" src="{{store.user.customerManager.avatarUrl}}"/>
+      </view>
+      <view class="header__tip" catchtap="onTapLevel" hover-class="navigator-hover">LV. 0</view>
+    </view>
+    <view class="header__right">
+      <view class="header__title">{{store.user.customerManager.name || '您好！'}}</view>
+      <view class="header__text">{{store.user.customerManager.job || '客户经理'}}</view>
+      <view class="header__text">{{store.user.customerManager.company || '未知公司'}}</view>
+    </view>
+  </view>
+
+  <view class="grid-list">
+    <view
+      class="grid-item"
+      hover-class="navigator-hover"
+      wx:for="{{gridList}}"
+      wx:key="{{index}}"
+      catchtap="onGridClick"
+      data-index="{{index}}"
+    >
+      <image class="grid-item__icon" src="{{item.icon}}" />
+      <view class="grid-item__text">{{item.title}}</view>
+    </view>
+  </view>
+
+  <action-list list-class="action-list" list="{{actionList}}" />
+</page-wraper>

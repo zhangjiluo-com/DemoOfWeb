@@ -1,0 +1,26 @@
+/* pages/product-form/index.wxss */
+.form{
+  background: #fff;
+  padding: 20rpx 0 30rpx;
+}
+.form-title{
+  font-size: 32rpx;
+  line-height: 50rpx;
+  text-align: center;
+}
+.form-item{
+  display: flex;
+  box-sizing: border-box;
+  padding: 20rpx 30rpx;
+  font-size: 32rpx;
+}
+.form-item__title{
+}
+.form-item__input{
+  flex: 1;
+  border-bottom: 1rpx solid #ccc;
+}
+.form-item__input-picker{
+  width: 100%;
+  height: 40rpx;
+}

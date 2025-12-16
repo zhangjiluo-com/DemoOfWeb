@@ -1,0 +1,28 @@
+<image class="icon" src="{{iconUrl}}"/>
+
+<view class="title">融金小助手（内测版）</view>
+
+<view class="list">
+  <view
+    class="item"
+    wx:for="{{list}}"
+    wx:key="{{index}}"
+    catchtap="onTapItem"
+    data-index="{{index}}"
+  >
+    <view class="item__title">{{item.title}}</view>
+    <view class="item__text" data-if-text="{{true}}">{{item.text}}</view>
+  </view>
+</view>
+
+<view class="contribution">
+  <view class="contribution-item" wx:for="{{contributors}}" wx:key="{{index}}">
+    <view class="contribution-item__title">
+      <block wx:if="{{item.type === 'TECHNICAL'}}">技术支持</block>
+      <block wx:if="{{item.type === 'MONEY'}}">资金捐助</block>
+    </view>
+    <view class="contribution-item__text">{{item.name}}</view>
+  </view>
+</view>
+
+

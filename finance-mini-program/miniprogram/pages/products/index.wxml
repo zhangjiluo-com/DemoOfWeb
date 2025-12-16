@@ -1,0 +1,21 @@
+
+<page-wraper loginCbs="{{loginCbs}}">
+  <view class="products">
+    
+    <navigator class="product" wx:for="{{list}}" wx:key="{{index}}" url="/pages/product/index?id={{list.id}}">
+      <image class="product__cover" wx:if="{{item.cover}}" src="{{item.cover}}"/>
+      <view class="product__details">
+        <view class="product__head">
+          <view class="product__name">{{item.name}}</view>
+          <view class="product__status">{{item.status === 'UNPBLISHED' && '未发布'}}</view>
+        </view>
+        <view class="text-overflow-ellipsis product__brife">{{item.brife}}</view>
+        <view class="product__others">
+          <text class="text-overflow-ellipsis product__owner">{{item.owner}}</text>
+          <text class="product__create-time">{{item.createAt}}</text>
+        </view>
+      </view>
+    </navigator>
+
+  </view>
+</page-wraper>

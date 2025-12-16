@@ -1,0 +1,45 @@
+.icon {
+  width: 100px;
+  height: 100px;
+  margin: 35px auto;
+}
+.title {
+  font-size: 14px;
+  text-align: center;
+  color: #999;
+}
+.version {
+  text-align: center;
+  font-size: 14px;
+}
+.list {
+  margin-top: 30px;
+}
+.item {
+  display: flex;
+  width: 290px;
+  height: 40px;
+  margin: 10px auto;
+  padding: 0 15px;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 15px;
+  background: #fff;
+}
+.item__text {
+  color: rgb(5, 141, 253);
+}
+.contribution {
+}
+.contribution-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 290px;
+  height: 30px;
+  margin: auto;
+  font-size: 14px;
+}
+.contribution-item__text {
+  color: #999;
+}

@@ -1,0 +1,43 @@
+<view class="form-item">
+  <view class="label label-class">{{config.label}}</view>
+  <control-input
+    class="control"
+    bindinput="input"
+    wx:if="{{config.type === 'input'}}"
+    value="{{value}}"
+    extra="{{config.extra}}"
+    value-class="value-class"
+  />
+  <control-address
+    class="control"
+    bindinput="input"
+    wx:elif="{{config.type === 'address'}}"
+    value="{{value}}"
+    extra="{{config.extra}}"
+    value-class="value-class"
+  />
+  <control-selector
+    class="control"
+    bindinput="input"
+    wx:elif="{{config.type === 'selector'}}"
+    value="{{value}}"
+    extra="{{config.extra}}"
+    value-class="value-class"
+  />
+  <control-uploader
+    class="control"
+    bindinput="input"
+    wx:elif="{{config.type === 'uploader'}}"
+    value="{{value}}"
+    extra="{{config.extra}}"
+    value-class="value-class"
+  />
+  <control-textarea
+    class="control"
+    bindinput="input"
+    wx:elif="{{config.type === 'textarea'}}"
+    value="{{value}}"
+    extra="{{config.extra}}"
+    value-class="value-class"
+  />
+</view>

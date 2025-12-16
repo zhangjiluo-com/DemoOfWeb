@@ -1,0 +1,17 @@
+
+<page-wraper loginCbs="{{loginCbs}}">
+  <form class="form" bindsubmit="bindsubmit">
+
+    <form-item
+      wx:for="{{formConfig}}"
+      wx:key="{{item.key}}"
+      name="{{item.key}}"
+      value="{{store.user.customerManager[item.key]}}"
+      config="{{item.config}}"
+      catchinput="input"
+      data-key="{{item.key}}"
+    />
+    
+    <button class="block-button" form-type="submit">提交</button>
+  </form>
+</page-wraper>

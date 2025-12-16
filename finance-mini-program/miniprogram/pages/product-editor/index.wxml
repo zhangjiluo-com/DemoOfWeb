@@ -1,0 +1,63 @@
+<form bindsubmit="submit">
+  <view class="section">
+  <!-- <image class="image" catchlongpress="longpress" mode="widthFix" src="{{image}}" catchtap="selectImage" /> -->
+    <label class="form-item">
+      <view class="form-item__title">产品名称</view>
+      <input class="form-item__input" name="name"/>
+    </label>
+    <label class="form-item">
+      <view class="form-item__title">公司</view>
+      <input class="form-item__input" name="company"/>
+    </label>
+    <label class="form-item">
+      <view class="form-item__title">产品简介</view>
+      <input class="form-item__input" name="introduction"/>
+    </label>
+    <label class="form-item">
+      <view class="form-item__title">产品描述</view>
+      <textarea class="form-item__input" name="description">
+      </textarea>
+    </label>
+    <label class="form-item">
+      <view class="form-item__title">是否启用</view>
+      <input class="form-item__input" name="enable"/>
+    </label>
+    <label class="form-item">
+      <view class="form-item__title">备注</view>
+      <input class="form-item__input" name="note"/>
+    </label>
+    <label class="form-item">
+      <view class="form-item__title">标签</view>
+      <input class="form-item__input" name="tags"/>
+    </label>
+  </view>
+
+  <view class="section">
+    <view class="section-title">自定义客户资料表单</view>
+    <view class="custom-item" wx:for="{{customForm}}" wx:key="{{index}}">
+      <view class="custom-item__title">{{item.typeName}}：</view>
+      <input class="custom-item__input" name="custom-{{index}}-{{item.type}}" placeholder="请填写标题"/>
+      <view class="custom-item__button" hover-class="navigator-hover" catchtap="removeCustomForm" data-index="{{index}}">删除</view>
+      <view class="custom-item__options" wx:if="{{item.type === 'selector' || item.type === 'multiSelector'}}">
+        <checkbox-group name="custom-{{index}}-options">
+          <checkbox value="{{item.type}}-0" checked/>
+          <checkbox value="{{item.type}}-1" checked/>
+          <checkbox value="{{item.type}}-2" checked/>
+        </checkbox-group>
+        <view class="custom-item__options-button">添加选项</view>
+      </view>
+    </view>
+  </view>
+
+  <view class="section">
+    <view class="section-title">添加自定义表单控件</view>
+    <view class="controls">
+      <view class="control" hover-class="navigator-hover" catchtap="addCustomForm" wx:for="{{types}}" wx:key="{{index}}" data-type="{{index}}">{{item}}</view>
+    </view>
+  </view>
+
+  <view class="buttons">
+    <button class="block-button" form-type="submit" data-key="preview">预览</button>
+    <button class="block-button" form-type="submit" data-key="publish">发布</button>
+  </view>
+</form>

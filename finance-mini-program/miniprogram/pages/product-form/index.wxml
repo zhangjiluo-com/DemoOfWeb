@@ -1,0 +1,16 @@
+<view class="form">
+  <view class="form-title">申请{{name}}</view>
+  <view class="form-item" wx:for="{{customForm}}" wx:key="index">
+    <view class="form-item__title">{{item.title || '空标题：'}}</view>
+    <input class="form-item__input" wx:if="{{item.type === 'input'}}"/>
+    <textarea class="form-item__input" wx:elif="{{item.type === 'textarea'}}"></textarea>
+    <picker
+      class="form-item__input"
+      wx:elif="{{item.isPicker}}"
+      mode="{{item.pickerMode}}"
+      fields="{{item.type}}"
+    >
+      <view class="form-item__input-picker"></view>
+    </picker>
+  </view>
+</view>

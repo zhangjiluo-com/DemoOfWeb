@@ -1,0 +1,10 @@
+{
+  "component": true,
+  "usingComponents": {
+    "control-input": "./control/input/index",
+    "control-selector": "./control/selector/index",
+    "control-address": "./control/address/index",
+    "control-uploader": "./control/uploader/index",
+    "control-textarea": "./control/textarea/index"
+  }
+}

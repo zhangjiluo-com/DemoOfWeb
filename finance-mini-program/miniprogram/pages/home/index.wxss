@@ -1,0 +1,67 @@
+.section-1 {
+  padding: 15px 0;
+}
+.section-1 .add-customer-button {
+  width: 345px;
+  height: 80px;
+  margin: auto;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px dashed #ccc;
+}
+
+.customer {
+  box-sizing: border-box;
+  padding: 15px;
+  font-size: 14px;
+  background: #fff;
+  margin-bottom: 15px;
+  color: #333;
+}
+.customer__row {
+  display: flex;
+  align-items: center;
+  margin-bottom: 5px;
+}
+.customer__row_headline {
+  font-size: 20px;
+  color: #000;
+}
+.customer__icon {
+  width: 20px;
+  height: 20px;
+}
+.customer__title,
+.customer__text {
+  flex: 1;
+}
+.customer__text_right {
+  text-align: right;
+}
+.customer__tag-item {
+  line-height: 18px;
+  display: inline-block;
+  margin: 5px;
+  padding: 3px 10px;
+  background: lightcoral;
+  border-radius: 18px;
+}
+
+.nothing-icon {
+  width: 128px;
+  height: 128px;
+  display: block;
+  margin: 30px auto;
+}
+.nothing-tip {
+  color: #aaa;
+  text-align: center;
+  font-size: 14px;
+  line-height: 30px;
+}
+.login-button {
+  letter-spacing: 0;
+  text-indent: 0;
+}

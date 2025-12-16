@@ -1,0 +1,15 @@
+
+<text class="value-class" wx:if="{{extra.isView}}">
+  <block wx:for="{{value.selector}}" wx:key="index" wx:if="{{value.selector.length > 0}}">{{item}} </block>{{value.detail}}
+</text>
+<view class="form-control-address value-class" wx:else>
+  <picker class="form-control-address__picker" mode="region" value="{{value.selector}}" bindchange="inputRegion">
+    <view class="form-control-address__picker-view" wx:if="{{value.selector.length > 0}}">
+      <block wx:for="{{value.selector}}" wx:key="index">{{item}} </block>
+    </view>
+    <view class="form-control-address__picker-view form-control-address__picker-view_empty" wx:else>请选择地区</view>
+  </picker>
+  <view class="form-control-address-input">
+    <input class="form-control-address-input-view" value="{{value.detail}}" bindinput="inputDetail" placeholder="请填写街道等详细地址"/>
+  </view>
+</view>

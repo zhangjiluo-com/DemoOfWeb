@@ -1,0 +1,39 @@
+
+<view class="uploader value-class">
+  <view class="file" wx:for="{{files}}" wx:key="{{index}}" style="{{extra.viewWidth ? 'width:'+(extra.viewWidth + 40) + 'px;' : ''}}{{extra.viewHeight ? 'height:' + extra.viewHeight + 'px;' : ''}}">
+    <view
+      class="file__content"
+      catchtap="onPreviewItem"
+      data-index="{{index}}"
+    >
+      <image
+        class="file__image"
+        wx:if="{{item.type === 'IMAGE'}}"
+        mode="aspectFit"
+        src="{{item.url}}"
+      />
+      <block wx:elif="{{item.type === 'DOCUMENT'}}">
+        <image class="file__icon" wx:if="{{item.ext === 'pdf'}}" src="../../../../images/pdf.png"/>
+        <image class="file__icon" wx:elif="{{item.ext === 'doc' || item.ext === 'docx'}}" src="../../../../images/word.png"/>
+        <image class="file__icon" wx:elif="{{item.ext === 'xls' || item.ext === 'xlsx'}}" src="../../../../images/excel.png"/>
+        <image class="file__icon" wx:elif="{{item.ext === 'ppt' || item.ext === 'pptx'}}" src="../../../../images/ppt.png"/>
+      </block>
+      <block wx:else>
+        <image class="file__icon" src="../../../../images/file-unknown.png"/>
+      </block>
+      <view class="file__title" wx:if="{{!extra.ifHideTitle}}">{{item.name}}</view>
+    </view>
+    <view class="file__actions" wx:if="{{!extra.isView}}">
+      <view class="file__delete" hover-class="navigator-hover" catchtap="onDeleteItem" data-index="{{index}}">删除</view>
+    </view>
+  </view>
+
+  <view
+    class="file__add"
+    hover-class="navigator-hover"
+    catchtap="onAddFile"
+    wx:if="{{files.length < ((ifSingleFile && 1) || extra.maxLength || 20) && !extra.isView}}"
+  >
+    <image class="file__add-icon" src="../../../../images/plus.png"/>
+  </view>
+</view>

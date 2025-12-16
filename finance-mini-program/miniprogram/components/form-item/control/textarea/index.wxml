@@ -1,0 +1,15 @@
+<text class="value-class" wx:if="{{extra.isView}}">{{value}}</text>
+<view class="textarea" wx:else>
+  <textarea
+    class="textarea__input"
+    value="{{value}}"
+    type="{{extra.type}}"
+    bindinput="input"
+    fixed="{{extra.fixed}}"
+    auto-height="{{extra.autoHeight || true}}"
+    maxlength="{{extra.maxLength || 80}}"
+    placeholder="{{extra.placeholder}}"
+    disabled="{{extra.disabled}}"
+    auto-focus="{{extra.autoFocus}}"
+  />
+</view>

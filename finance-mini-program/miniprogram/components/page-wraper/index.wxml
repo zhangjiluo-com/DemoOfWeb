@@ -1,0 +1,12 @@
+<view class="page" >
+  <view class="login" wx:if="{{ifLoginBoxShow}}">
+    <view class="login__box">
+      <view class="login__avatar"><open-data type="userAvatarUrl"/></view>
+      <view class="login__title">未检测到您的登录信息或信息已过期</view>
+      <view class="login__cancel" catchtap="onTapLoginBoxCancel">我再逛逛</view>
+      <button class="login__button" open-type="getUserInfo" bindgetuserinfo="onGetUserInfo">自动登录</button>
+    </view>
+  </view>
+  <!-- <view class="title-bar" style="top: {{statusBarHeight}}px"></view> -->
+  <slot/>
+</view>
