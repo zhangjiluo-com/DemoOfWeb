@@ -1,3 +1,4 @@
 packages:
   - "packages/h5"
   - "packages/nuxt"
+  - "packages/nest"
