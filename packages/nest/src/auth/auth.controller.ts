@@ -15,6 +15,7 @@ import { LoginDto } from "./dto/login.dto";
 import { Public } from "src/shared/decorators/public.decorator";
 
 @ApiTags("用户")
+@ApiHeader({ name: "Authorization" })
 @Controller("auth")
 export class AuthController {
   constructor(private readonly authService: AuthService) {}
@@ -29,6 +30,7 @@ export class AuthController {
     return this.authService.login(dto.username, dto.password);
   }
 
+  @ApiOperation({ summary: "检查登录状态" })
   @Get("check")
   async check(@Request() req) {
     return {

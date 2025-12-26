@@ -1,6 +1,7 @@
 import { NestFactory } from "@nestjs/core";
 import { AppModule } from "./app.module";
 import { ValidationPipe } from "@nestjs/common";
+import { Logger } from "nestjs-pino";
 import { DocumentBuilder, SwaggerModule } from "@nestjs/swagger";
 import { PORT } from "./config/constants";
 import { TransformResponseInterceptor } from "./shared/interceptors/transform-response.interceptor";
@@ -9,7 +10,10 @@ import { HttpExceptionFilter } from "./shared/filters/http-exception.filter";
 async function bootstrap() {
   const app = await NestFactory.create(AppModule, {
     logger: ["verbose", "debug", "log", "warn", "error", "fatal"],
+    bufferLogs: true,
   });
+
+  app.useLogger(app.get(Logger));
 
   // 设置全局路由前缀
   app.setGlobalPrefix("api");
