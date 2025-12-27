@@ -1,4 +1,4 @@
-import { Role } from "src/role/entities/role.entity";
+import { Role } from 'src/role/entities/role.entity'
 import {
   Entity,
   PrimaryGeneratedColumn,
@@ -8,69 +8,45 @@ import {
   DeleteDateColumn,
   ManyToMany,
   JoinTable,
-} from "typeorm";
+} from 'typeorm'
 
-@Entity({ name: "users" })
+@Entity({ name: 'users' })
 export class User {
-  // 单一自增主键（核心标识，不可变）
   @PrimaryGeneratedColumn()
-  id: number;
+  id: number
 
-  @Column("varchar", { length: 20 })
-  name: string;
+  @Column('varchar', { length: 255, unique: true })
+  name: string
 
-  // 用户名：唯一、非空
-  @Column("varchar", {
-    length: 20,
-    unique: true,
-    nullable: false,
-  })
-  username: string;
+  @Column('varchar', { length: 255, unique: true })
+  username: string
 
-  // 邮箱：唯一、可空（长度调整为更合理的 60）
-  @Column("varchar", {
-    length: 60,
-    unique: true,
-    nullable: true,
-  })
-  email: string;
+  @Column('varchar', { length: 255, unique: true, nullable: true })
+  email: string | null = null
 
-  // 手机号：唯一、可空
-  @Column("varchar", {
-    length: 11,
-    unique: true,
-    nullable: true,
-  })
-  phone: string;
+  @Column('varchar', { length: 11, unique: true, nullable: true })
+  phone: string | null = null
 
-  @Column("varchar", { length: 32 })
-  password: string;
+  @Column('varchar', { length: 255 })
+  password: string
 
-  @Column("int", { default: 0 })
-  status: number;
+  @Column('int', { default: 0 })
+  status: number
 
   @CreateDateColumn()
-  createdAt: Date;
+  createdAt: Date
 
   @UpdateDateColumn()
-  updatedAt: Date;
+  updatedAt: Date
 
   @DeleteDateColumn()
-  removedAt: Date;
+  removedAt: Date
 
-  @ManyToMany(() => Role, (role) => role.users, {
-    cascade: true,
-  })
+  @ManyToMany(() => Role, role => role.users, { onDelete: 'CASCADE' })
   @JoinTable({
-    name: "user_roles", // 此关系的联结表的表名
-    joinColumn: {
-      name: "user",
-      referencedColumnName: "id",
-    },
-    inverseJoinColumn: {
-      name: "role",
-      referencedColumnName: "id",
-    },
+    name: 'userRoles',
+    joinColumn: { name: 'userId', referencedColumnName: 'id' },
+    inverseJoinColumn: { name: 'roleId', referencedColumnName: 'id' },
   })
-  roles: Role[];
+  roles: Role[]
 }

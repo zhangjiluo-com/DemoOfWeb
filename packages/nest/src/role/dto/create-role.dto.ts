@@ -1,34 +1,26 @@
-import { ApiProperty } from "@nestjs/swagger";
+import { ApiProperty } from '@nestjs/swagger'
 
-import {
-  IS_ENUM,
-  IsIn,
-  IsInt,
-  IsNumber,
-  IsString,
-  Length,
-  Min,
-} from "class-validator";
+import { IS_ENUM, IsIn, IsInt, IsNumber, IsOptional, IsString, Length, Min } from 'class-validator'
 
-import { IsNotEmpty } from "class-validator";
+import { IsNotEmpty } from 'class-validator'
 
 export class CreateRoleDto {
-  @ApiProperty({ description: "角色名称" })
+  @ApiProperty({ description: '名称' })
   @IsString()
   @IsNotEmpty()
   @Length(2, 20)
-  name: string;
+  name: string
 
-  @ApiProperty({ description: "角色描述" })
+  @ApiProperty({ description: '备注' })
   @IsString()
-  @IsNotEmpty()
+  @IsOptional()
   @Length(2, 40)
-  description: string;
+  note: string = ''
 
-  @ApiProperty({ description: "角色状态" })
+  @ApiProperty({ description: '状态' })
   @IsInt()
   @Min(0)
   @IsIn([0, 1])
   @IsNotEmpty()
-  status: number;
+  status: number
 }

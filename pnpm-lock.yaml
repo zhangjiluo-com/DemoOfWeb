@@ -6,7 +6,11 @@ settings:
 
 importers:
 
-  .: {}
+  .:
+    dependencies:
+      '@zhangjiluo.com/prettier':
+        specifier: ^0.0.1
+        version: 0.0.1
 
   packages/h5:
     devDependencies:
@@ -2273,6 +2277,9 @@ packages:
 
   '@xtuc/long@4.2.2':
     resolution: {integrity: sha512-NuHqBY1PB/D8xU6s/thBgOAiAP7HOYDQ32+BFZILJ8ivkUkAHQnWfn6WhL79Owj1qmUnoN/YPhktdIoucipkAQ==}
+
+  '@zhangjiluo.com/prettier@0.0.1':
+    resolution: {integrity: sha512-DCiWHcnfxcRwBvaP5FtcvVcTAj9bOzs4rQ7B39L7gm8rEb30ZV5Vd+sb+GsJ/hIBbBWxmcuJIKM7JEnk4XDuPw==}
 
   abbrev@1.1.1:
     resolution: {integrity: sha512-nne9/IiQ/hzIhY6pdDnbBtz7DjPTKrY00P/zvPSm5pOFkl6xuGrGnXn/VtTNNfNtAfZ9/1RtehkszU9qcTii0Q==}
@@ -4924,6 +4931,11 @@ packages:
 
   prettier@3.4.2:
     resolution: {integrity: sha512-e9MewbtFo+Fevyuxn/4rrcDAaq0IYxPGLvObpQjiZBMAzB9IGmzlnG9RZy3FFas+eBMu2vA0CszMeduow5dIuQ==}
+    engines: {node: '>=14'}
+    hasBin: true
+
+  prettier@3.7.4:
+    resolution: {integrity: sha512-v6UNi1+3hSlVvv8fSaoUbggEM5VErKmmpGA7Pl3HF8V6uKY7rvClBOJlH6yNwQtfTueNkGVpOv/mtWL9L4bgRA==}
     engines: {node: '>=14'}
     hasBin: true
 
@@ -8431,6 +8443,10 @@ snapshots:
 
   '@xtuc/long@4.2.2': {}
 
+  '@zhangjiluo.com/prettier@0.0.1':
+    dependencies:
+      prettier: 3.7.4
+
   abbrev@1.1.1:
     optional: true
 
@@ -11508,6 +11524,8 @@ snapshots:
   prelude-ls@1.2.1: {}
 
   prettier@3.4.2: {}
+
+  prettier@3.7.4: {}
 
   pretty-bytes@7.1.0: {}
 

@@ -1,43 +1,40 @@
-import { ApiProperty } from "@nestjs/swagger";
-import {
-  IsArray,
-  IsEmail,
-  IsNotEmpty,
-  IsString,
-  Length,
-} from "class-validator";
+import { ApiProperty } from '@nestjs/swagger'
+import { IsArray, IsEmail, IsNotEmpty, IsOptional, IsPhoneNumber, IsString, Length } from 'class-validator'
 
 export class CreateUserDto {
-  @ApiProperty({ description: "名称", example: "张三" })
+  @ApiProperty({ description: '名称', example: '张三' })
   @IsString()
   @IsNotEmpty()
   @Length(2, 20)
-  name: string;
+  name: string
 
-  @ApiProperty({ description: "用户名", example: "zhangsan" })
+  @ApiProperty({ description: '用户名', example: 'zhangsan' })
   @IsString()
   @IsNotEmpty()
   @Length(2, 20)
-  username: string;
+  username: string
 
-  @ApiProperty({ description: "邮箱", example: "zhangsan@example.com" })
+  @ApiProperty({ description: '邮箱', example: 'zhangsan@example.com' })
   @IsString()
   @IsEmail()
+  @IsOptional()
   @Length(2, 60)
-  email: string;
+  email: string | null = null
 
-  @ApiProperty({ description: "手机号", example: "13800000000" })
-  @IsNotEmpty()
+  @ApiProperty({ description: '手机号', example: '13800000000' })
+  @IsString()
+  @IsPhoneNumber('CN')
+  @IsOptional()
   @Length(11, 11)
-  phone: string;
+  phone: string | null = null
 
-  @ApiProperty({ description: "密码", example: "admin123" })
+  @ApiProperty({ description: '密码', example: 'admin123' })
   @IsString()
   @IsNotEmpty()
   @Length(6, 32)
-  password: string;
+  password: string
 
-  @ApiProperty({ description: "角色ID列表", example: [1, 2] })
+  @ApiProperty({ description: '角色', example: [1, 2] })
   @IsArray()
-  roleIds: number[];
+  roleIds: number[]
 }

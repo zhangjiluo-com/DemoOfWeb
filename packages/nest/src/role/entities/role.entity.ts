@@ -1,37 +1,47 @@
-import { User } from "src/user/entities/user.entity";
+import { Permission } from 'src/permission/entities/permission.entity'
+import { User } from 'src/user/entities/user.entity'
 import {
   Column,
   CreateDateColumn,
   DeleteDateColumn,
   Entity,
+  JoinTable,
   ManyToMany,
   PrimaryGeneratedColumn,
   UpdateDateColumn,
-} from "typeorm";
+} from 'typeorm'
 
-@Entity({ name: "roles" })
+@Entity({ name: 'roles' })
 export class Role {
   @PrimaryGeneratedColumn()
-  id: number;
+  id: number
 
-  @Column("varchar", { length: 20 })
-  name: string;
+  @Column('varchar', { length: 255, unique: true })
+  name: string
 
-  @Column("varchar", { length: 40 })
-  description: string;
+  @Column('varchar', { length: 255 })
+  note: string
 
-  @Column("int", { default: 0 })
-  status: number;
+  @Column('int', { default: 0 })
+  status: number
 
   @CreateDateColumn()
-  createdAt: Date;
+  createdAt: Date
 
   @UpdateDateColumn()
-  updatedAt: Date;
+  updatedAt: Date
 
   @DeleteDateColumn()
-  removedAt: Date;
+  removedAt: Date
 
-  @ManyToMany(() => User, (user) => user.roles)
-  users: User[];
+  @ManyToMany(() => User, it => it.roles, { onDelete: 'CASCADE' })
+  users: User[]
+
+  @ManyToMany(() => Permission, it => it.roles, { onDelete: 'CASCADE' })
+  @JoinTable({
+    name: 'rolePermissions',
+    joinColumn: { name: 'roleId', referencedColumnName: 'id' },
+    inverseJoinColumn: { name: 'permissionId', referencedColumnName: 'id' },
+  })
+  permissions: Permission[]
 }

@@ -1,23 +1,22 @@
-import { Module } from "@nestjs/common";
-import { AuthModule } from "./auth/auth.module";
-import { AuthGuard } from "./auth/auth.guard";
-import { APP_GUARD } from "@nestjs/core";
-import { UserModule } from "./user/user.module";
-import { LoggerModule } from "nestjs-pino";
-import pino from "pino";
-import { IS_DEV } from "./config/constants";
-import { TypeOrmModule } from "@nestjs/typeorm";
-import { User } from "./user/entities/user.entity";
-import { SetupModule } from "./setup/setup.module";
-import { RoleModule } from "./role/role.module";
+import { Module } from '@nestjs/common'
+import { AuthModule } from './auth/auth.module'
+import { AuthGuard } from './auth/auth.guard'
+import { APP_GUARD } from '@nestjs/core'
+import { UserModule } from './user/user.module'
+import { LoggerModule } from 'nestjs-pino'
+import pino from 'pino'
+import { IS_DEV } from './config/constants'
+import { TypeOrmModule } from '@nestjs/typeorm'
+import { User } from './user/entities/user.entity'
+import { SetupModule } from './setup/setup.module'
+import { RoleModule } from './role/role.module'
+import { PermissionModule } from './permission/permission.module'
 
 @Module({
   imports: [
-    AuthModule,
-    UserModule,
     TypeOrmModule.forRoot({
-      type: "sqljs",
-      location: "./db.sqlite",
+      type: 'sqljs',
+      location: './db.sqlite',
       autoSave: true,
       extra: {
         readOnly: false,
@@ -26,7 +25,7 @@ import { RoleModule } from "./role/role.module";
       autoLoadEntities: true,
       synchronize: true,
       logging: true,
-      logger: "advanced-console",
+      logger: 'advanced-console',
     }),
     // TypeOrmModule.forRoot({
     //   type: "postgres",
@@ -47,18 +46,18 @@ import { RoleModule } from "./role/role.module";
           targets: [
             IS_DEV
               ? {
-                  target: "pino-pretty",
+                  target: 'pino-pretty',
                   options: {
                     colorize: true,
                   },
                 }
               : {
-                  target: "pino-roll",
+                  target: 'pino-roll',
                   options: {
-                    file: "./logs/app",
-                    dateFormat: "yyyy-MM-dd.hh",
-                    frequency: "hourly",
-                    maxSize: "5m",
+                    file: './logs/app',
+                    dateFormat: 'yyyy-MM-dd.hh',
+                    frequency: 'hourly',
+                    maxSize: '5m',
                     limit: {
                       count: 1000,
                     },
@@ -70,7 +69,10 @@ import { RoleModule } from "./role/role.module";
       },
     }),
     SetupModule,
+    AuthModule,
+    UserModule,
     RoleModule,
+    PermissionModule,
   ],
   controllers: [],
   providers: [
