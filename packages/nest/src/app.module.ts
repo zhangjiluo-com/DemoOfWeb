@@ -18,18 +18,21 @@ import { SystemReadyGuard } from './setup/setup-ready.guard'
 
 @Module({
   imports: [
-    TypeOrmModule.forRoot({
-      type: 'sqljs',
-      location: './db.sqlite',
-      autoSave: true,
-      extra: {
-        readOnly: false,
+    TypeOrmModule.forRootAsync({
+      async useFactory() {
+        return {
+          type: 'sqljs',
+          location: './db.sqlite',
+          autoSave: true,
+          extra: {
+            readOnly: false,
+          },
+          autoLoadEntities: true,
+          synchronize: true,
+          logging: true,
+          logger: 'advanced-console',
+        }
       },
-
-      autoLoadEntities: true,
-      synchronize: true,
-      logging: true,
-      logger: 'advanced-console',
     }),
     // TypeOrmModule.forRoot({
     //   type: "postgres",
